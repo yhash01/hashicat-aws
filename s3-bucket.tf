@@ -6,8 +6,5 @@ module "s3_bucket" {
   version = "2.2.0"
 
   
-  versioning = {
-    enabled = true
-  }
 
 }
