@@ -1,7 +1,13 @@
+module "s3_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
 
-module "s3-bucket" {
-  source  = "app.terraform.io/ynagami-training/s3-bucket/aws" 
+  bucket = "my-s3-bucket"
+  acl    = "private"
   version = "2.2.0"
   bucket_prefix = "${var.prefix}"
-  # insert required variables here
+  
+  versioning = {
+    enabled = true
+  }
+
 }
